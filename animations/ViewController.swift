@@ -23,9 +23,15 @@ class ViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func buttomStartAnimation(_ sender: UIButton) {
-        viewAnimated.frame = CGRect(x: 285, y: viewAnimated.frame.origin.y, width: viewAnimated.frame.size.width, height: viewAnimated.frame.size.height)
+        UIView.animate(withDuration: 1.0, delay: 0.3, options: [.repeat, .autoreverse, .curveEaseIn], animations: {
+            self.viewAnimated.frame = CGRect(x: 285, y: self.viewAnimated.frame.origin.y, width: self.viewAnimated.frame.size.width, height: self.viewAnimated.frame.size.height)
+        })
+        // a option to controller the options to animation "completion"
+        //{(_ ) in
+            //UIView.animate(withDuration: 0.5, animations: {
+                //self.viewAnimated.frame = CGRect(x: 45, y: //self.viewAnimated.frame.origin.y, width: //self.viewAnimated.frame.size.width, height: //self.viewAnimated.frame.size.height)
+            //})
+        //}
     }
-    
-
 }
 
